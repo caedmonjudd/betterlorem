@@ -22,7 +22,7 @@ module BetterLorem
 
     return_words = select_words.join(' ')
 
-    return_words << "." unless loader.is_end_with_puncuation?(return_words)
+    loader.correct_punctuation(return_words)
     return_words
   end
 
@@ -53,23 +53,25 @@ module BetterLorem
       end
     end
 
+    # Remove any bad characters from the line
     def clean_line(line)
       line.gsub!(/\n/, '')
     end
 
+    # Capitalize the sentence that is passed
     def capilalize_sentences(line)
       line.split.each { |x| print x.capitalize!, " "}.join(" ")
     end
 
-    def is_end_with_puncuation?(line)
+    # Determine if the line ends with punctuation
+    def correct_punctuation(line)
       PUNCTUATION.each do |punct|
-        puts "Test = #{line[line.length - 1].to_s}"
         if line[line.length - 1].to_s == punct
           line[line.length - 1] = "."
-          return true
+          return
         end
       end
-      false
+      line << "."
     end
 
   end
