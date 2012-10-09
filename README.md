@@ -1,6 +1,6 @@
 # BetterLorem #
 
-Welcome to BetterLorem -- hopefully a better way to generate the famous Lorem Ipsum text for your applications.
+Welcome to BetterLorem -- hopefully a better way to generate the famous Lorem Ipsum text for your applications.  This includes a new latin transcript for a fresh look and feel.
 
 ## Getting Started ##
 
