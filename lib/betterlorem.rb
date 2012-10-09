@@ -1,6 +1,6 @@
 # BetterLorem
 #
-# A better Lorem Ipsom generator
+# A better Lorem Ipsum generator
 #
 # Created By Caedmon Judd (caedmon@statebuilt.com)
 # http://statebuilt.com
