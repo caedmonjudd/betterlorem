@@ -18,8 +18,8 @@ BetterLorem is not framework dependent, so you can use it in any Ruby 1.9x compa
     BetterLorem.p ( <Number>, <Line Ending>, <Surround With Tag> )  # <- Generate paragraphs
 
     # Number - Number of Characters, Words, or Paragraphs to generate
-    # Line Ending - What character to use to end each paragraph or line.  Defaults to '<br>'.
-    # Surround with Tag - What tag to surround each paragraph with.  Defaults to 'p'.
+    # Line Ending - (Optional) Character to use to end each paragraph or line.  Defaults to '<br>'.
+    # Surround with Tag - (Optional) Tag to surround each paragraph with.  Defaults to 'p'.
 
 Examples
 
