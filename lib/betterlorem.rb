@@ -13,7 +13,7 @@ module BetterLorem
   PUNCTUATION = ['.', ',', '!', '?', ':']
 
   # Return Words
-  def self.w(count, line_ending = "<br>", surround_with_tag = "p")
+  def self.w(count, line_ending = "<br>", surround_with_tag = "p", no_html = false)
     loader = Loader.new
 
     # Merge paragraphs into one line and split into words
@@ -37,11 +37,15 @@ module BetterLorem
     # Correct the sentence's punctuation
     correct_punctuation(return_words)
 
-    return_words = "<#{surround_with_tag}>#{return_words}</#{surround_with_tag}>#{line_ending}"
+    if no_html
+      "#{return_words}#{line_ending}"
+    else
+      "<#{surround_with_tag}>#{return_words}</#{surround_with_tag}>#{line_ending}"
+    end
   end
 
   # Return Paragraphs
-  def self.p(count, line_ending = "<br>", surround_with_tag = "p")
+  def self.p(count, line_ending = "<br>", surround_with_tag = "p", no_html = false)
     loader = Loader.new
 
     # Start at a random index in the array but do not overrun array
@@ -55,14 +59,18 @@ module BetterLorem
 
     # Build final format based on parameters
     paragraphs.map! do |line|
-      line = "<#{surround_with_tag}>#{line}</#{surround_with_tag}>#{line_ending}"
+      if no_html
+        line = "#{line}#{line_ending}"
+      else
+        line = "<#{surround_with_tag}>#{line}</#{surround_with_tag}>#{line_ending}"
+      end
     end
 
     paragraphs.join('\n')
   end
 
   # Return Characters
-  def self.c(count, line_ending = "<br>", surround_with_tag = "p")
+  def self.c(count, line_ending = "<br>", surround_with_tag = "p", no_html = false)
     loader = Loader.new
 
     # Merge paragraphs into one line
@@ -87,7 +95,12 @@ module BetterLorem
     # Capitalize the sentence
     sentence = lines[start_inx, count]
     sentence[0] = sentence[0].to_s.capitalize
-    sentence
+
+    if no_html
+      "#{sentence}#{line_ending}"
+    else
+      "<#{surround_with_tag}>#{sentence}</#{surround_with_tag}>#{line_ending}"
+    end
   end
 
 

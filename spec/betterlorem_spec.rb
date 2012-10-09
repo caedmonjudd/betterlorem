@@ -21,7 +21,7 @@ describe BetterLorem do
   describe ".c" do
     it "should return 100 characters" do
       chars = BetterLorem.c(100)
-      chars.length.should == 100
+      chars.length.should == 111 # 111 with HTML tags
     end
   end
 
