@@ -112,7 +112,7 @@ module BetterLorem
 
     def initialize
       self.lines = []
-      File.open('lorem.txt').each_line do |line|
+      File.open(File.dirname(__FILE__) << '/lorem.txt').each_line do |line|
         self.lines << clean_line(line)
       end
     end
