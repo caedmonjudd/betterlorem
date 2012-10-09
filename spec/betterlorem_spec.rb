@@ -20,8 +20,8 @@ describe BetterLorem do
   describe ".c" do
     it "should return characters only" do
       chars = BetterLorem.c(100)
-      puts chars
-      chars.should_not == ""
+      puts "LINE |#{chars}|"
+      chars.length.should == 100
     end
   end
 

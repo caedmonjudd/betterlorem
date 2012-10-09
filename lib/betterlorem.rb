@@ -37,7 +37,6 @@ module BetterLorem
   # Return Paragraphs
   def self.p(count, line_ending = "<br>", surround_with_tag = "p")
     loader = Loader.new
-    start_inx = 1
 
     # Start at a random index in the array but do not overrun array
     start_inx = rand(loader.lines.count - count)
@@ -57,17 +56,28 @@ module BetterLorem
   def self.c(count, line_ending = "<br>", surround_with_tag = "p")
     loader = Loader.new
 
-    # Start at a random index in the array
-
-
+    # Merge paragraphs into one line
     lines = loader.lines.join(' ')
 
-    start_inx = rand(lines.length)
+    # Start at a random index in the array
+    start_inx = rand(lines.length - count)
 
-    chars = lines[start_inx, count]
+    # Move the starting index to the beginning of a word
+    inx = 1
+    lines[start_inx, 100].scan(/./).each do |char|
+      if char == ' '
+        start_inx += inx
+        break
+      end
+      inx += 1
+    end
 
+    # Capitalize the sentence
+    sentence = lines[start_inx, count]
 
+    sentence[0] = sentence[0].to_s.capitalize
 
+    sentence
   end
 
 
