@@ -1,8 +1,11 @@
 # BetterLorem
-#-----------------------------------------------------------
-# State Digital -- Caedmon Judd -- caedmon@statebuilt.com
+#
+# A better Lorem Ipsom generator
+#
+# Created By Caedmon Judd (caedmon@statebuilt.com)
 # http://statebuilt.com
-#-----------------------------------------------------------
+#
+# Copyright 2012 State Digital. All rights reserved.
 #
 
 module BetterLorem
@@ -17,7 +20,7 @@ module BetterLorem
     words = loader.lines.join(' ').split(' ')
 
     # Start at a random index in the array
-    start_inx = rand(words.count)
+    start_inx = rand(words.count - count)
 
     # Select a random subset of words
     select_words = words[start_inx, count]
@@ -74,16 +77,14 @@ module BetterLorem
 
     # Capitalize the sentence
     sentence = lines[start_inx, count]
-
     sentence[0] = sentence[0].to_s.capitalize
-
     sentence
   end
 
 
   private
 
-  # Determine if the line ends with punctuation
+  # Determine if the line ends with punctuation and correct it
   def self.correct_punctuation(line)
     PUNCTUATION.each do |punct|
       if line[line.length - 1].to_s == punct
@@ -95,6 +96,7 @@ module BetterLorem
   end
 
 
+  # Lorem file loader
   class Loader
 
     attr_accessor :lines
@@ -110,13 +112,5 @@ module BetterLorem
     def clean_line(line)
       line.gsub!(/\n/, '')
     end
-
-    # Capitalize the sentence that is passed
-    def capilalize_sentences(line)
-      line.split.each { |x| print x.capitalize!, " " }.join(" ")
-    end
-
-
   end
-
 end
