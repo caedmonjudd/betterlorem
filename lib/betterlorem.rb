@@ -22,6 +22,9 @@ module BetterLorem
     # Start at a random index in the array
     start_inx = rand(words.count - count)
 
+    # Check for overrun
+    raise "I don't know that many words. Try a smaller value." if (start_inx + count) > words.count
+
     # Select a random subset of words
     select_words = words[start_inx, count]
 
@@ -44,6 +47,9 @@ module BetterLorem
     # Start at a random index in the array but do not overrun array
     start_inx = rand(loader.lines.count - count)
 
+    # Check for overrun
+    raise "I don't know that many words. Try a smaller value." if (start_inx + count) > loader.lines.count
+
     # Build paragraphs from array
     paragraphs = loader.lines[start_inx, count]
 
@@ -64,6 +70,9 @@ module BetterLorem
 
     # Start at a random index in the array
     start_inx = rand(lines.length - count)
+
+    # Check for overrun
+    raise "I don't know that many words. Try a smaller value." if (start_inx + count) > lines.length
 
     # Move the starting index to the beginning of a word
     inx = 1
