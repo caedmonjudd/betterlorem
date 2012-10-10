@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'BetterLorem'
+require 'betterlorem'
 
 describe BetterLorem do
 
@@ -14,6 +14,7 @@ describe BetterLorem do
   describe ".p" do
     it "should return 3 paragraphs" do
       lines = BetterLorem.p(3)
+      puts lines
       lines.should_not == ""
     end
   end
@@ -21,7 +22,7 @@ describe BetterLorem do
   describe ".c" do
     it "should return 100 characters" do
       chars = BetterLorem.c(100)
-      chars.length.should == 111 # 111 with HTML tags
+      chars.length.should == 107 # 107 with HTML tags
     end
   end
 
