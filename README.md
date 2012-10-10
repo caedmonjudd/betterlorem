@@ -22,7 +22,7 @@ BetterLorem is not framework dependent, so you can use it in any Ruby 1.9x compa
 
     # Number -     (Optional) Integer - Number of Characters, Words, or Paragraphs to generate.  Defaults to 100 characters, 20 words, or 3 paragraphs.
     # Plain Text - (Optional) Boolean - Exclude the HTML tags from the return.  Only includes the Line Ending.
-    # Exclude Trailing Period - (Optional) Boolean - Excludes the trailing period form the sentence.  This has no affect on the Character method (BetterLorem.c).
+    # Exclude Trailing Period - (Optional) Boolean - Excludes the trailing period from the sentence.  This has no effect on the Character method (BetterLorem.c).
 
 Examples
 
