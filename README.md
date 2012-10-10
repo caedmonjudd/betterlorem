@@ -1,6 +1,6 @@
 # BetterLorem #
 
-Welcome to BetterLorem -- hopefully a better way to generate the famous Lorem Ipsum text for your applications.  Every call to BetterLorem will generate a new transcript based on your parameters -- no two are the same.
+Welcome to BetterLorem -- a better way to generate the famous Lorem Ipsum text for your applications.  Every call to BetterLorem will generate a new transcript based on your parameters -- no two are the same.
 
 This gem works great as a view helper, a lazy attribute for FactoryGirl -- really anywhere you need to call it.
 
