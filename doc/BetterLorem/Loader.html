@@ -85,7 +85,7 @@
 
   <ul>
   
-    <li class="file"><a href="../lorem_txt.html">lorem</a>
+    <li class="file"><a href="../lib/lorem_txt.html">lorem</a>
   
   </ul>
 </nav>
@@ -168,10 +168,10 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/betterlorem.rb, line 113</span>
+            <pre><span class="ruby-comment"># File lib/betterlorem.rb, line 126</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">lines</span> = []
-  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">'lorem.txt'</span>).<span class="ruby-identifier">each_line</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'/lorem.txt'</span>).<span class="ruby-identifier">each_line</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
     <span class="ruby-keyword">self</span>.<span class="ruby-identifier">lines</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">clean_line</span>(<span class="ruby-identifier">line</span>)
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
@@ -207,7 +207,7 @@
 
           
           <div class="method-source-code" id="clean_line-source">
-            <pre><span class="ruby-comment"># File lib/betterlorem.rb, line 121</span>
+            <pre><span class="ruby-comment"># File lib/betterlorem.rb, line 134</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">clean_line</span>(<span class="ruby-identifier">line</span>)
   <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">%r\n/</span>, <span class="ruby-string">''</span>)
 <span class="ruby-keyword">end</span></pre>
