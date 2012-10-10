@@ -66,7 +66,7 @@ module BetterLorem
       end
     end
 
-    paragraphs.join('\n')
+    paragraphs.join('')
   end
 
   # Return Characters
