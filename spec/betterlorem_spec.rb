@@ -14,7 +14,6 @@ describe BetterLorem do
   describe ".p" do
     it "should return 3 paragraphs" do
       lines = BetterLorem.p(3)
-      puts lines
       lines.should_not == ""
     end
   end

@@ -38,7 +38,7 @@ module BetterLorem
     correct_punctuation(return_words)
 
     if plainText
-      "#{return_words}\n"
+      "#{return_words}"
     else
       "<p>#{return_words}</p>"
     end
@@ -60,7 +60,7 @@ module BetterLorem
     # Build final format based on parameters
     paragraphs.map! do |line|
       if plainText
-        line = "#{line}\n"
+        line = "#{line}"
       else
         line = "<p>#{line}</p>"
       end
@@ -97,7 +97,7 @@ module BetterLorem
     sentence[0] = sentence[0].to_s.capitalize
 
     if plainText
-      "#{sentence}\n"
+      "#{sentence}"
     else
       "<p>#{sentence}</p>"
     end
