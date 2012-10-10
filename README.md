@@ -2,6 +2,9 @@
 
 Welcome to BetterLorem -- hopefully a better way to generate the famous Lorem Ipsum text for your applications.  Every call to BetterLorem will generate a new transcript based on your parameters.  This includes a new latin transcript for a fresh look and feel.
 
+This gem works great as a view helper, a lazy attribute for FactoryGirl -- really anywhere you need to call it.
+
+
 ## Getting Started ##
 
 All you need to do is install the Gem:
