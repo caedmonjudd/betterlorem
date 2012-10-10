@@ -152,7 +152,7 @@ href="http://statebuilt.com">statebuilt.com</a></p>
         
         <div class="method-heading">
           <span class="method-name">c</span><span
-            class="method-args">(count = 100, plainText = false)</span>
+            class="method-args">(count = 100, plainText = false, exclude_trailing_period = false)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
         
@@ -164,8 +164,8 @@ href="http://statebuilt.com">statebuilt.com</a></p>
 
           
           <div class="method-source-code" id="c-source">
-            <pre><span class="ruby-comment"># File lib/betterlorem.rb, line 73</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">c</span>(<span class="ruby-identifier">count</span> = <span class="ruby-value">100</span>, <span class="ruby-identifier">plainText</span> = <span class="ruby-keyword">false</span>)
+            <pre><span class="ruby-comment"># File lib/betterlorem.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">c</span>(<span class="ruby-identifier">count</span> = <span class="ruby-value">100</span>, <span class="ruby-identifier">plainText</span> = <span class="ruby-keyword">false</span>, <span class="ruby-identifier">exclude_trailing_period</span> = <span class="ruby-keyword">false</span>)
   <span class="ruby-identifier">loader</span> = <span class="ruby-constant">Loader</span>.<span class="ruby-identifier">new</span>
 
   <span class="ruby-comment"># Merge paragraphs into one line</span>
@@ -192,7 +192,7 @@ href="http://statebuilt.com">statebuilt.com</a></p>
   <span class="ruby-identifier">sentence</span>[<span class="ruby-value">0</span>] = <span class="ruby-identifier">sentence</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">capitalize</span>
 
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">plainText</span>
-    <span class="ruby-node">&quot;#{sentence}\n&quot;</span>
+    <span class="ruby-node">&quot;#{sentence}&quot;</span>
   <span class="ruby-keyword">else</span>
     <span class="ruby-node">&quot;&lt;p&gt;#{sentence}&lt;/p&gt;&quot;</span>
   <span class="ruby-keyword">end</span>
@@ -211,7 +211,7 @@ href="http://statebuilt.com">statebuilt.com</a></p>
         
         <div class="method-heading">
           <span class="method-name">p</span><span
-            class="method-args">(count = 5, plainText = false)</span>
+            class="method-args">(count = 5, plainText = false, exclude_trailing_period = false)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
         
@@ -223,8 +223,8 @@ href="http://statebuilt.com">statebuilt.com</a></p>
 
           
           <div class="method-source-code" id="p-source">
-            <pre><span class="ruby-comment"># File lib/betterlorem.rb, line 48</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">p</span>(<span class="ruby-identifier">count</span> = <span class="ruby-value">5</span>, <span class="ruby-identifier">plainText</span> = <span class="ruby-keyword">false</span>)
+            <pre><span class="ruby-comment"># File lib/betterlorem.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">p</span>(<span class="ruby-identifier">count</span> = <span class="ruby-value">5</span>, <span class="ruby-identifier">plainText</span> = <span class="ruby-keyword">false</span>, <span class="ruby-identifier">exclude_trailing_period</span> = <span class="ruby-keyword">false</span>)
   <span class="ruby-identifier">loader</span> = <span class="ruby-constant">Loader</span>.<span class="ruby-identifier">new</span>
 
   <span class="ruby-comment"># Start at a random index in the array but do not overrun array</span>
@@ -238,8 +238,10 @@ href="http://statebuilt.com">statebuilt.com</a></p>
 
   <span class="ruby-comment"># Build final format based on parameters</span>
   <span class="ruby-identifier">paragraphs</span>.<span class="ruby-identifier">map!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+
+    <span class="ruby-identifier">remove_puctuation</span>(<span class="ruby-identifier">line</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">exclude_trailing_period</span>
     <span class="ruby-keyword">if</span> <span class="ruby-identifier">plainText</span>
-      <span class="ruby-identifier">line</span> = <span class="ruby-node">&quot;#{line}\n&quot;</span>
+      <span class="ruby-identifier">line</span> = <span class="ruby-node">&quot;#{line}&quot;</span>
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">line</span> = <span class="ruby-node">&quot;&lt;p&gt;#{line}&lt;/p&gt;&quot;</span>
     <span class="ruby-keyword">end</span>
@@ -261,7 +263,7 @@ href="http://statebuilt.com">statebuilt.com</a></p>
         
         <div class="method-heading">
           <span class="method-name">w</span><span
-            class="method-args">(count = 15, plainText = false)</span>
+            class="method-args">(count = 15, plainText = false, exclude_trailing_period = false)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
         
@@ -274,7 +276,7 @@ href="http://statebuilt.com">statebuilt.com</a></p>
           
           <div class="method-source-code" id="w-source">
             <pre><span class="ruby-comment"># File lib/betterlorem.rb, line 16</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">w</span>(<span class="ruby-identifier">count</span> = <span class="ruby-value">15</span>, <span class="ruby-identifier">plainText</span> = <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">w</span>(<span class="ruby-identifier">count</span> = <span class="ruby-value">15</span>, <span class="ruby-identifier">plainText</span> = <span class="ruby-keyword">false</span>, <span class="ruby-identifier">exclude_trailing_period</span> = <span class="ruby-keyword">false</span>)
   <span class="ruby-identifier">loader</span> = <span class="ruby-constant">Loader</span>.<span class="ruby-identifier">new</span>
 
   <span class="ruby-comment"># Merge paragraphs into one line and split into words</span>
@@ -296,10 +298,14 @@ href="http://statebuilt.com">statebuilt.com</a></p>
   <span class="ruby-identifier">return_words</span> = <span class="ruby-identifier">select_words</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">' '</span>)
 
   <span class="ruby-comment"># Correct the sentence's punctuation</span>
-  <span class="ruby-identifier">correct_punctuation</span>(<span class="ruby-identifier">return_words</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">exclude_trailing_period</span>
+    <span class="ruby-identifier">remove_puctuation</span>(<span class="ruby-identifier">return_words</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">correct_punctuation</span>(<span class="ruby-identifier">return_words</span>)
+  <span class="ruby-keyword">end</span>
 
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">plainText</span>
-    <span class="ruby-node">&quot;#{return_words}\n&quot;</span>
+    <span class="ruby-node">&quot;#{return_words}&quot;</span>
   <span class="ruby-keyword">else</span>
     <span class="ruby-node">&quot;&lt;p&gt;#{return_words}&lt;/p&gt;&quot;</span>
   <span class="ruby-keyword">end</span>

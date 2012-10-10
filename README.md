@@ -16,18 +16,19 @@ BetterLorem is not framework dependent, so you can use it in any Ruby 1.9x compa
 
 ### Usage ###
 
-    BetterLorem.c ( <Number>, <Plain Text> )  # <- Generate characters
-    BetterLorem.w ( <Number>, <Plain Text> )  # <- Generate words
-    BetterLorem.p ( <Number>, <Plain Text> )  # <- Generate paragraphs
+    BetterLorem.c ( <Number>, <Plain Text>, <Exclude Trailing Period> )  # <- Generate characters
+    BetterLorem.w ( <Number>, <Plain Text>, <Exclude Trailing Period> )  # <- Generate words
+    BetterLorem.p ( <Number>, <Plain Text>, <Exclude Trailing Period> )  # <- Generate paragraphs
 
     # Number -     (Optional) Integer - Number of Characters, Words, or Paragraphs to generate.  Defaults to 100 characters, 20 words, or 3 paragraphs.
     # Plain Text - (Optional) Boolean - Exclude the HTML tags from the return.  Only includes the Line Ending.
+    # Exclude Trailing Period - (Optional) Boolean - Excludes the trailing period form the sentence.  This has no affect on the Character method (BetterLorem.c).
 
 Examples
 
-    BetterLorem.w            # -> Generate and return 20 words
-    BetterLorem.p(10, true ) # -> Generate and return 10 paragraphs, in plain text (no HTML tags).
-    BetterLorem.c(100)       # -> Generate and return 100 characters and includes HTML (<p> tags).
+    BetterLorem.w                  # -> Generate and return 20 words
+    BetterLorem.p(10, true, true ) # -> Generate and return 10 paragraphs, in plain text (no HTML tags), excluding the trailing period.
+    BetterLorem.c(100)             # -> Generate and return 100 characters and includes HTML (<p> tags).
 
 
 ### Documentation / Support ###
