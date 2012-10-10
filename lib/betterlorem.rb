@@ -13,7 +13,7 @@ module BetterLorem
   PUNCTUATION = ['.', ',', '!', '?', ':']
 
   # Return Words
-  def self.w(count = 15, plainText = false)
+  def self.w(count = 15, plainText = false, exclude_trailing_period = false)
     loader = Loader.new
 
     # Merge paragraphs into one line and split into words
@@ -35,7 +35,11 @@ module BetterLorem
     return_words = select_words.join(' ')
 
     # Correct the sentence's punctuation
-    correct_punctuation(return_words)
+    if exclude_trailing_period
+      remove_puctuation(return_words)
+    else
+      correct_punctuation(return_words)
+    end
 
     if plainText
       "#{return_words}"
@@ -45,7 +49,7 @@ module BetterLorem
   end
 
   # Return Paragraphs
-  def self.p(count = 5, plainText = false)
+  def self.p(count = 5, plainText = false, exclude_trailing_period = false)
     loader = Loader.new
 
     # Start at a random index in the array but do not overrun array
@@ -59,6 +63,8 @@ module BetterLorem
 
     # Build final format based on parameters
     paragraphs.map! do |line|
+
+      remove_puctuation(line) if exclude_trailing_period
       if plainText
         line = "#{line}"
       else
@@ -70,7 +76,7 @@ module BetterLorem
   end
 
   # Return Characters
-  def self.c(count = 100, plainText = false)
+  def self.c(count = 100, plainText = false, exclude_trailing_period = false)
     loader = Loader.new
 
     # Merge paragraphs into one line
@@ -115,6 +121,15 @@ module BetterLorem
       end
     end
     line << "."
+  end
+
+  def self.remove_puctuation(line)
+    PUNCTUATION.each do |punct|
+      if line[line.length - 1].to_s == punct
+        line[line.length - 1] = ""
+        return
+      end
+    end
   end
 
 
