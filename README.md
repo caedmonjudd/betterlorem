@@ -11,7 +11,7 @@ All you need to do is install the Gem:
 
     gem install betterlorem
 
-BetterLorem is not framework dependent, so you can use it in any Ruby 1.9x compatible application.
+BetterLorem will produce a transcript surrounded with <p></p> tags.  Use the plain_text parameter to switch it off.
 
 
 ### Usage ###
@@ -21,7 +21,7 @@ BetterLorem is not framework dependent, so you can use it in any Ruby 1.9x compa
     BetterLorem.p ( <Number>, <Plain Text>, <Exclude Trailing Period> )  # <- Generate paragraphs
 
     # Number -     (Optional) Integer - Number of Characters, Words, or Paragraphs to generate.  Defaults to 100 characters, 20 words, or 3 paragraphs.
-    # Plain Text - (Optional) Boolean - Exclude the HTML tags from the return.  Only includes the Line Ending.
+    # Plain Text - (Optional) Boolean - Exclude the HTML <p></p> tags from the return.  Only includes the Line Ending.
     # Exclude Trailing Period - (Optional) Boolean - Excludes the trailing period from the sentence.  This has no effect on the Character method (BetterLorem.c).
 
 Examples

@@ -2,7 +2,7 @@
 #
 # A better Lorem Ipsum generator
 #
-# Created By Caedmon Judd (caedmon@statebuilt.com)
+# Created By Caedmon Judd
 # http://statebuilt.com
 #
 # Copyright 2012 State Digital. All rights reserved.
