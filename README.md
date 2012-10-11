@@ -11,7 +11,7 @@ All you need to do is install the Gem:
 
     gem install betterlorem
 
-BetterLorem will produce a transcript surrounded with <p></p> tags.  Use the plain_text parameter to switch it off.
+BetterLorem will produce a transcript surrounded with #p# tags.  Use the plain_text parameter to switch it off.
 
 
 ### Usage ###
@@ -28,7 +28,7 @@ Examples
 
     BetterLorem.w                  # -> Generate and return 20 words
     BetterLorem.p(10, true, true ) # -> Generate and return 10 paragraphs, in plain text (no HTML tags), excluding the trailing period.
-    BetterLorem.c(100)             # -> Generate and return 100 characters and includes HTML (<p> tags).
+    BetterLorem.c(100)             # -> Generate and return 100 characters and includes HTML (#p# tags).
 
 
 ### Documentation / Support ###
