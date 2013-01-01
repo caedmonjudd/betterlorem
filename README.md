@@ -31,13 +31,13 @@ Examples
     BetterLorem.c(100)             # -> Generate and return 100 characters and includes HTML (p tags).
 
 
-### Documentation / Support ###
+## Documentation / Support ##
 
 Not much -- it's pretty simple.
 
 Be sure to check out the Wiki for updates.  If you have a patch, be sure to submit it!
 
 
-### License ###
+## License ##
 
 All work is copyrighted by State Digital, LLC under the MIT License:  http://opensource.org/licenses/MIT
