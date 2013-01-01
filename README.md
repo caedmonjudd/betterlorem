@@ -38,3 +38,6 @@ Not much -- it's pretty simple.
 Be sure to check out the Wiki for updates.  If you have a patch, be sure to submit it!
 
 
+### License ###
+
+All work is copyrighted by State Digital, LLC under the MIT License:  http://opensource.org/licenses/MIT
